@@ -347,6 +347,20 @@ footer p {
         content: " (" attr(href) ")";
         font-size: 9pt;
     }
+
+    .aside-photo {
+        max-width: 240px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #cccccc;
+    }
+
+    .aside-photo img {
+        max-height: 260px;
+        width: auto;
+        margin: 0 auto;
+    }
 }
 
 /* Lightbox pro zvětšení fotek */
