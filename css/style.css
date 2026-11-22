@@ -1,0 +1,388 @@
+/* Základní nastavení a moderní typografie */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #36333b;
+    background-color: #fff8f5;
+}
+
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hlavička v jemném broskvovo-růžovém přechodu z palety */
+header {
+    background: linear-gradient(135deg, #fff3ec 0%, #fae9e6 100%);
+    color: #36333b;
+    padding: 20px 0 14px 0;
+    text-align: center;
+    border-bottom: 1px solid #f0ded8;
+}
+
+.site-title {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: -0.01em;
+}
+
+.site-title a {
+    color: #36333b;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.site-title a:hover {
+    opacity: 0.75;
+}
+
+.site-tagline {
+    margin: 4px 0 0 0;
+    font-size: 0.95rem;
+    color: #4f4a56;
+}
+
+/* Navigace */
+nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f2e2dc;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(109, 104, 117, 0.06);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+nav li a {
+    display: block;
+    padding: 7px 16px;
+    color: #4f4a56;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    border-radius: 999px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav li a:hover,
+nav li a:focus {
+    background-color: #ffe8dc;
+    color: #2c2930;
+}
+
+nav li a.active {
+    background-color: #6D6875;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Vícesloupcový layout (Flexbox) */
+.layout {
+    display: flex;
+    gap: 24px;
+    padding: 24px 0;
+    align-items: flex-start;
+}
+
+main {
+    flex: 2;
+    min-width: 0;
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(109, 104, 117, 0.06);
+    border: 1px solid #f5e6e0;
+}
+
+aside {
+    flex: 1;
+    min-width: 230px;
+    background-color: #fff1eb;
+    padding: 22px;
+    border-radius: 16px;
+    border: 1px solid #f2cfc2;
+}
+
+/* Nadpisy a odkazy v textu */
+h1 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.9rem;
+    color: #4a4552;
+    line-height: 1.25;
+}
+
+h2 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+    color: #6D6875;
+}
+
+aside h2 {
+    margin-top: 0;
+    color: #57525e;
+}
+
+aside ul {
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+aside li {
+    margin-bottom: 6px;
+}
+
+main a, aside a {
+    color: #8c4d5b;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+main a:hover, aside a:hover {
+    color: #4a4552;
+}
+
+/* Fotka v postranním panelu (kočka v Alchymistovi) */
+.aside-photo {
+    margin: 14px 0 0 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(109, 104, 117, 0.08);
+}
+
+.aside-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.aside-photo figcaption {
+    font-size: 0.85rem;
+    color: #57525e;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+/* Fotogalerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.gallery figure {
+    margin: 0;
+    background: #fffaf8;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #f5e6e0;
+    box-shadow: 0 3px 12px rgba(109, 104, 117, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery figure:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(109, 104, 117, 0.12);
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery figcaption {
+    font-size: 0.85rem;
+    color: #57525e;
+    padding: 10px 12px;
+    text-align: center;
+}
+
+.gallery figure:first-child {
+    grid-column: 1 / -1;
+}
+
+.gallery figure:first-child img {
+    aspect-ratio: 16 / 10;
+}
+
+/* Tabulka na úvodní stránce */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border-bottom: 1px solid #f2e2dc;
+    padding: 11px 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #fde4d8;
+    color: #4a4552;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: #fff8f5;
+}
+
+/* Patička */
+footer {
+    background-color: #6D6875;
+    color: #fff3ed;
+    padding: 18px 0;
+    margin-top: 24px;
+    font-size: 0.85rem;
+    text-align: center;
+    border-top: 3px solid #E5989B;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responzivita pod 720px (na 800x600 zůstávají 2 sloupce vedle sebe) */
+@media (max-width: 720px) {
+    .layout {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* VERZE PRO TISK */
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+    }
+
+    nav, footer {
+        display: none;
+    }
+
+    header {
+        background: #ffffff;
+        color: #000000;
+        border-bottom: 2px solid #000000;
+        padding: 0 0 8pt 0;
+        text-align: left;
+    }
+
+    .site-title a, .site-tagline {
+        color: #000000;
+    }
+
+    .layout {
+        display: block;
+        padding: 10pt 0;
+    }
+
+    main, aside {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: #ffffff;
+        margin-bottom: 12pt;
+    }
+
+    .gallery {
+        display: block;
+    }
+
+    .gallery figure {
+        display: inline-block;
+        width: 45%;
+        margin: 0 4% 10pt 0;
+        page-break-inside: avoid;
+        border: 1px solid #cccccc;
+        box-shadow: none;
+    }
+
+    a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+    }
+}
+
+/* Lightbox pro zvětšení fotek */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 26, 34, 0.88);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 82vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-caption {
+    color: #ffffff;
+    margin-top: 12px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2.2rem;
+    cursor: pointer;
+    line-height: 1;
+}
