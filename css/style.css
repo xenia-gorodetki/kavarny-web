@@ -272,16 +272,24 @@ footer p {
     margin: 0;
 }
 
-/* Responzivita pod 720px (na 800x600 zůstávají 2 sloupce vedle sebe) */
+/* Responzivita pod 720px (na 800x600 zůstávají 2 sloupce vedle sebe) + oprava tabulky v úvodu pro mobily */
 @media (max-width: 720px) {
     .layout {
         flex-direction: column;
     }
-    aside {
+    main, aside {
         width: 100%;
     }
     .gallery {
         grid-template-columns: 1fr;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    th, td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
     }
 }
 
